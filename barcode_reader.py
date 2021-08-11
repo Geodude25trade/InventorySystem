@@ -5,10 +5,9 @@ from gtin import GTIN
 def capture_barcodes():
     while True:
         barcode = input()
-        print(bytes(barcode, 'utf-8'))
-        code_obj = GTIN('51000000118')
+        code_obj = GTIN(barcode)
         print(tuple(code_obj))
-        # BarcodeGenerator.get_barcode(barcode.gcp)
+        BarcodeGenerator.get_barcode(code_obj.raw)
 
 
 if __name__ == '__main__':
