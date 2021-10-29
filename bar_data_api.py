@@ -12,7 +12,7 @@ class BarcodeData:
         except requests.exceptions.RequestException as err:
             print(err.request, err.response)
         else:
-            print(r.json())
+            return r.json()
 
 
 if __name__ == '__main__':

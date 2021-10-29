@@ -96,24 +96,25 @@ class BarcodeGenerator:
 
     @classmethod
     def get_barcode(cls, data, code=CodeType.UPC_A, image_type=ImageType.SVG, image_size=ImageSize.MEDIUM):
-        directory = path.join('.data', 'barcodes', code.name.lower())
-        try:
-            r = requests.get(cls.BASE_URL, params={'bc_number': code, 'bc_data': data, 'bc_format': image_type, 'bc_size': image_size})
-            r.raise_for_status()
-        except requests.exceptions.RequestException as err:
-            print(err.request, err.response)
-        else:
-            with open('.data/barcodes/invalid/invalid.png', 'rb') as file:
-                invalid = file.read()
-            if invalid == r.content:
-                print("Invalid Code")
+        if data:
+            directory = path.join('.data', 'barcodes', code.name.lower())
+            try:
+                r = requests.get(cls.BASE_URL, params={'bc_number': code, 'bc_data': data, 'bc_format': image_type, 'bc_size': image_size})
+                r.raise_for_status()
+            except requests.exceptions.RequestException as err:
+                print(err.request, err.response)
             else:
-                filename = path.join(directory, f'{data}.{image_type.name.lower()}')
-                if not path.exists(filename):
-                    print(f"Generating Barcode for data: {data}")
-                    makedirs(directory, exist_ok=True)
-                    with open(filename, 'wb') as file:
-                        file.write(r.content)
+                with open('.data/barcodes/invalid/invalid.png', 'rb') as file:
+                    invalid = file.read()
+                if invalid == r.content:
+                    print("Invalid Code")
+                else:
+                    filename = path.join(directory, f'{data}.{image_type.name.lower()}')
+                    if not path.exists(filename):
+                        print(f"Generating Barcode for data: {data}")
+                        makedirs(directory, exist_ok=True)
+                        with open(filename, 'wb') as file:
+                            file.write(r.content)
 
 
 if __name__ == '__main__':
