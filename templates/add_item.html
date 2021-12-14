@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block styles %}
+    {{ super() }}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/index.css') }}">#}
+{% endblock %}
+{% block content %}
+    <h1>Hello World</h1>
+    <form method="POST" action="/add">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name(size=20) }}
+        {{ form.upc.label }} {{ form.upc(size=20) }}
+        {{ form.expiration_date.label }} {{ form.expiration_date() }}
+        {{ form.categories.label }} {{ form.categories() }}
+        <div id="btn-add-category">+</div>
+        <input type="submit" value="Go">
+    </form>
+    <script>
+        let index = 1;
+        let categoriesList = $("#categories");
+        $("#btn-add-category").on('click', function() {
+            categoriesList.append(`<li><label for="categories-${index}">category</label> <input id="categories-${index}" name="categories-${index}" type="text" value=""></li>`);
+            index += 1;
+        });
+    </script>
+{% endblock %}
