@@ -1,0 +1,17 @@
+@import ../base/variables
+@import ../base/mixins
+@import ../base/placeholders
+
+button[id^="btn-"]
+  color: $light
+  background: $primary
+  font-weight: bold
+  font-size: 1.2rem
+  padding: 10px
+  border: 0 solid transparent
+  border-radius: 5px
+  @include transition(background 0.5s ease, box-shadow 0.25s ease)
+
+  &:hover
+    @include box-shadow(0 0 6px $primary-light)
+    background: $primary-light

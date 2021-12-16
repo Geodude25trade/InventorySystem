@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap')
+@import base/variables
+@import base/mixins
+@import base/placeholders
+
+body, html
+  margin: 0
+  padding: 0
+  font-size: 18px
+  font-family: $font-stack
+  color: $light
+  background: $dark
+  -webkit-box-sizing: border-box !important
+  -moz-box-sizing: border-box !important
+  box-sizing: border-box !important
+  scroll-behavior: smooth
+
+.navbar
+  width: 100%
+  position: sticky
+  z-index: 15
+  background: $medium-dark
+  top: 0
+  left: 0
+  @include box-shadow(0 0 8px 2px $base)
+
+  .links
+    @include flex-box(flex-start, center, center)
+
+  a
+    text-decoration: none
+    color: $light
+    padding: $navbar-link-padding-vertical 5px
+    margin: 0 15px 0 5px
+    font-weight: bold
+    font-size: 1.5rem
+
+    &:hover
+      color: $primary
+      @include transition(color 0.5s ease)
+
+    &:visited
+      color: $light
+
+.message
+  @include flex-box(center, center, center)
+  position: fixed
+  z-index: 20
+  width: 600px
+  height: auto
+  padding: 15px 0
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  font-weight: bold
+  font-size: 1.2rem
+  color: $dark
+  border: 4px solid transparent
+  border-radius: 0 0 8px 8px
+  text-align: center
+
+  &--info
+    background: lighten($info, 35%)
+    border-color: $info
+
+  &--error
+    background: lighten($error, 25%)
+    border-color: $error
+
+  &--warning
+    background: lighten($warning, 25%)
+    border-color: $warning
+
+  &--success
+    background: lighten($success, 35%)
+    border-color: $success
+
+.expired, .almost-expired, .old, .fresh
+  font-weight: bold
+
+.expired
+  color: $expired
+
+.almost-expired
+  color: $almost-expired
+
+.old
+  color: $old
+
+.fresh
+  color: $fresh
+
+.main-container
+  width: 80%
+  text-align: center
+  margin: 100px auto 0 auto
+
+.no-select
+  @extend %no-select
+
+.cancel-pointer-events
+  pointer-events: none
+
+a
+  color: $primary-light
+
+  &:visited
+    color: $secondary-light

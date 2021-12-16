@@ -1,0 +1,40 @@
+@import ../base/variables
+@import ../base/mixins
+@import ../base/placeholders
+@use "sass:math"
+
+.table-container
+  @include flex-box(center, center)
+  width: clamp(60%, 80%, 90%)
+  margin: 100px auto
+
+  table
+    width: 100%
+    text-align: left
+    border-collapse: collapse
+    background: $medium-light
+    margin: 25px 0
+
+  thead
+    position: sticky
+    z-index: 2
+    top: calc(1.5rem + #{$navbar-link-padding-vertical} + #{$navbar-link-padding-vertical} + 7px)
+
+  thead tr th
+    @extend %no-select
+    @include transition(background 0.25s ease)
+    background: $medium-dark
+    cursor: pointer
+    font-size: 1.2rem
+
+    &:hover
+      background: $medium
+
+  tbody
+
+    tr:nth-child(even)
+      background: $medium
+
+  th, td
+    border: 0 solid transparent
+    padding: 8px
