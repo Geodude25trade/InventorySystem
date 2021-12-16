@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block styles %}
+    {{ super() }}
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/components/inputs.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/layout/view-items.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="main-container">
+        <div class="search-bar">
+            <label for="search">Search</label><input id="search" type="text" autocomplete="off" autofocus onfocus="this.select()">
+            <script>
+                $("#search{{ id }}").on('keyup', function () {
+                    let searchTerm = $(this).val().toLowerCase();
+                    $(".items-table > tbody > tr").each(function () {
+                        console.log("Made it here");
+                        let display = false;
+                        $(this).children("td").each(function () {
+                            let tdText = $(this).text().toLowerCase();
+                            if (tdText.indexOf(searchTerm) !== -1) {
+                                display = true;
+                                return false;
+                            }
+                        });
+                        $(this).toggle(display);
+                    });
+                });
+            </script>
+        </div>
+        <div class="table-container">
+            <table class="items-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>UPC</th>
+                    <th>Expiration Date</th>
+                    <th>Tags</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in items %}
+                    <tr class="item {{ item.expiration_status }}">
+                        <td class="item-name">{{ item.id }}</td>
+                        <td class="item-name">{{ item.name }}</td>
+                        <td class="item-upc">{{ item.upc }}</td>
+                        <td class="item-expiration">{{ item.expiration if item.expiration else "N\A" }}</td>
+                        <td class="item-tags">{% for tag in item.tags %}{{ tag.name }}{{ ", " if not loop.last }}{% endfor %}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        let searchBar = $("#search");
+        $(document).on('keydown', function (e) {
+            if (e.which === 27) {
+                searchBar.val("");
+                searchBar.focus();
+            }
+        });
+
+        $(".items-table > thead > tr > th").each(function () {
+            let header = $(this);
+            let i = header.index();
+            let reverse = false;
+
+            header.click(function () {
+                $(".items-table").find('td').filter(function () {
+                    return $(this).index() === i;
+                }).sortElements(function (a, b) {
+                    return $.text([a]) > $.text([b]) ? reverse ? -1 : 1 : reverse ? 1 : -1;
+                }, function () {
+                    return this.parentNode;
+                });
+
+                reverse = !reverse;
+            });
+        });
+    </script>
+{% endblock %}

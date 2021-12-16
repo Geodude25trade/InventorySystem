@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='scripts/pie-chart.js') }}" type="text/javascript"></script>
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/layout/data-view.css') }}">
+{% endblock %}
+{% block content %}
+    <div id="scroll-prompt">V</div>
+    <div class="data-container">
+        <div id="expiring-soon" class="table-container">
+            <h2>Expiring Soon</h2>
+            <table class="items-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>UPC</th>
+                    <th>Expiration Date</th>
+                    <th>Tags</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in items %}
+                    <tr class="item {{ item.expiration_status }}">
+                        <td class="item-name">{{ item.id }}</td>
+                        <td class="item-name">{{ item.name }}</td>
+                        <td class="item-upc">{{ item.upc }}</td>
+                        <td class="item-expiration">{{ item.expiration if item.expiration else "N\A" }}</td>
+                        <td class="item-tags">{% for tag in item.tags %}{{ tag.name }}{{ ", " if not loop.last }}{% endfor %}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="money-spent"><h2>Total Money Spent</h2><h3>${{ total_spent }}</h3></div>
+        <div id="money-wasted"><h2>Total Money Wasted</h2><h3>${{ total_wasted }}</h3></div>
+        <div id="pie-condition-cost"><h2>Total $ Spent by Item Condition</h2></div>
+        <div id="pie-tag"><h2>Total # of Items by Tag</h2></div>
+        <div id="pie-tag-cost"><h2>Total $ Spent by Tag</h2></div>
+        <div id="pie-tag-average-cost"><h2>Average Item Cost by Tag</h2></div>
+{#        <div id="pie-tag-condition-available-cost"><h2>Total $ Spent by Tag with Item Condition Available</h2></div>#}
+        <div id="pie-tag-condition-used-cost"><h2>Total $ Spent by Tag with Item Condition Used</h2></div>
+        <div id="pie-tag-condition-discarded-cost"><h2>Total $ Spent by Tag with Item Condition Discarded</h2></div>
+    </div>
+    <script>
+        let pieRequest = {
+            "url": "/data",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": ""
+        };
+
+        pieRequest["data"] = JSON.stringify({"data_object": "condition_pie"});
+        $.ajax(pieRequest).done(function (response) {
+            if (response["code"] === 200) {
+                let chart = PieChart(response["data"], {
+                    name: d => d.name,
+                    value: d => d.value,
+                    width: 400,
+                    height: 400,
+                    labelPercent: 0.65,
+                    colors: ["#2fab31", "#e8cb5c", "#ce5151"],
+                    format: "$.2f"
+                    {#labelUnitsPre: "$"#}
+                });
+                d3.select("#pie-condition-cost").node().appendChild(chart);
+            } else {
+                displayMessage(response["message"], "error");
+            }
+        });
+
+        pieRequest["data"] = JSON.stringify({"data_object": "tag_pie"});
+        $.ajax(pieRequest).done(function (response) {
+            if (response["code"] === 200) {
+                let chart = PieChart(response["data"], {
+                    name: d => d.name,
+                    value: d => d.value,
+                    width: 400,
+                    height: 400,
+                    labelFontSize: 14
+                });
+                d3.select("#pie-tag").node().appendChild(chart);
+            } else {
+                displayMessage(response["message"], "error");
+            }
+        });
+
+        pieRequest["data"] = JSON.stringify({"data_object": "tag_cost_pie"});
+        $.ajax(pieRequest).done(function (response) {
+            if (response["code"] === 200) {
+                let chart = PieChart(response["data"], {
+                    name: d => d.name,
+                    value: d => d.value,
+                    width: 400,
+                    height: 400,
+                    labelFontSize: 14,
+                    format: "$.2f"
+                    {#labelUnitsPre: "$"#}
+                });
+                d3.select("#pie-tag-cost").node().appendChild(chart);
+            } else {
+                displayMessage(response["message"], "error");
+            }
+        });
+
+        pieRequest["data"] = JSON.stringify({"data_object": "tag_average_cost_pie"});
+        $.ajax(pieRequest).done(function (response) {
+            if (response["code"] === 200) {
+                let chart = PieChart(response["data"], {
+                    name: d => d.name,
+                    value: d => d.value,
+                    width: 400,
+                    height: 400,
+                    labelFontSize: 14,
+                    format: "$.2f"
+                    {#labelUnitsPre: "$"#}
+                });
+                d3.select("#pie-tag-average-cost").node().appendChild(chart);
+            } else {
+                displayMessage(response["message"], "error");
+            }
+        });
+
+        pieRequest["data"] = JSON.stringify({"data_object": "tag_condition_discarded_cost_pie"});
+        $.ajax(pieRequest).done(function (response) {
+            if (response["code"] === 200) {
+                let chart = PieChart(response["data"], {
+                    name: d => d.name,
+                    value: d => d.value,
+                    width: 400,
+                    height: 400,
+                    labelFontSize: 14,
+                    format: "$.2f"
+                    {#labelUnitsPre: "$"#}
+                });
+                d3.select("#pie-tag-condition-discarded-cost").node().appendChild(chart);
+            } else {
+                displayMessage(response["message"], "error");
+            }
+        });
+
+        pieRequest["data"] = JSON.stringify({"data_object": "tag_condition_used_cost_pie"});
+        $.ajax(pieRequest).done(function (response) {
+            if (response["code"] === 200) {
+                let chart = PieChart(response["data"], {
+                    name: d => d.name,
+                    value: d => d.value,
+                    width: 400,
+                    height: 400,
+                    labelFontSize: 14,
+                    format: "$.2f"
+                    {#labelUnitsPre: "$"#}
+                });
+                d3.select("#pie-tag-condition-used-cost").node().appendChild(chart);
+            } else {
+                displayMessage(response["message"], "error");
+            }
+        });
+
+        {#pieRequest["data"] = JSON.stringify({"data_object": "tag_condition_available_cost_pie"});
+        $.ajax(pieRequest).done(function (response) {
+            if (response["code"] === 200) {
+                let chart = PieChart(response["data"], {
+                    name: d => d.name,
+                    value: d => d.value,
+                    width: 400,
+                    height: 400,
+                    labelFontSize: 14,
+                    format: "$.2f"
+                    #}{#labelUnitsPre: "$",#}{#
+                });
+                d3.select("#pie-tag-condition-available-cost").node().appendChild(chart);
+            } else {
+                displayMessage(response["message"], "error");
+            }
+        });#}
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            let scrollPrompt = $("#scroll-prompt");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollPrompt.fadeOut();
+            } else {
+                scrollPrompt.fadeIn();
+            }
+        }
+
+    </script>
+{% endblock %}
