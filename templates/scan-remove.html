@@ -64,6 +64,7 @@
         };
 
         function sendScan() {
+            index = 0;
             upc = upcInput.val();
             scanRequest["data"] = JSON.stringify({"upc": upc});
             $.ajax(scanRequest).done(function (response) {
@@ -79,6 +80,7 @@
         }
 
         function sendAll() {
+            index = 0;
             upc = null;
             scanRequest["data"] = JSON.stringify({"all_items": "all_items"});
             $.ajax(scanRequest).done(function (response) {
