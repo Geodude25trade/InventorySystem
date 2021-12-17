@@ -96,6 +96,16 @@ class Item(db.Model):
     condition = db.Column(db.Enum(ItemConditionEnum), nullable=False, server_default="available")
     tags = db.relationship('Tag', backref='items', secondary='item_tags')
 
+    # TODO: Consider adding a date for when the item was added. That way we could do a percentage calculation for how
+    #       close a good is to expiring so the time is less arbitrary. Some things need to be used in days while others
+    #       need to be used within a few years. Example: (Expiration_Date - Purchase_Date) = Lifespan;
+    #       (Expiration_Date - Today) = Days_To_Expire; (Days_To_Expire / Lifespan) = Percentage_Expired; Then you could
+    #       do something like:
+    #       0-49% = fresh
+    #       50-79% = old
+    #       80-99% = almost_expired
+    #       100+% = expired
+
     @property
     def expiration_status(self):
         if self.expiration:
