@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/components/inputs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/layout/scan-remove.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="main-container">
+        <div class="code-scan-container">
+            <input id="upc" name="upc" type="text" placeholder="Scan or Enter Code" autofocus onfocus="this.select()"
+                   autocomplete="off">
+            <button id="btn-submit-upc">Scan</button>
+            <button id="btn-submit-all-items">View All</button>
+        </div>
+        <div class="table-container" style="display: none">
+            <table class="items-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>UPC</th>
+                    <th>Expiration Date</th>
+                    <th>Tags</th>
+                    <th>Use</th>
+                    <th>Discard</th>
+                    <th>Remove</th>
+                    <th>None</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <button id="btn-remove-items">Remove</button>
+        </div>
+    </div>
+    <script>
+        let index = 0;
+        let itemsContainer = $(".table-container");
+        let itemsTable = $(".items-table");
+        let upcInput = $("#upc");
+        let expirationInput = $("#expiration");
+        let upc = null;
+
+
+        let scanRequest = {
+            "url": "/scan_remove",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": null,
+        };
+
+        let removeRequest = {
+            "url": "/remove",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": null,
+        };
+
+        function sendScan() {
+            index = 0;
+            upc = upcInput.val();
+            scanRequest["data"] = JSON.stringify({"upc": upc});
+            $.ajax(scanRequest).done(function (response) {
+                itemsTable.children("tbody").empty();
+                if (response["code"] === 200) {
+                    itemsContainer.fadeIn();
+                    response["items"].forEach(element => addItem(element));
+                } else {
+                    itemsContainer.fadeOut();
+                    displayMessage(response["message"], "error");
+                }
+            });
+        }
+
+        function sendAll() {
+            index = 0;
+            upc = null;
+            scanRequest["data"] = JSON.stringify({"all_items": "all_items"});
+            $.ajax(scanRequest).done(function (response) {
+                itemsTable.children("tbody").empty();
+                if (response["code"] === 200) {
+                    itemsContainer.fadeIn();
+                    response["items"].forEach(element => addItem(element));
+                } else {
+                    itemsContainer.fadeOut();
+                    displayMessage(response["message"], "error");
+                }
+            });
+        }
+
+        function addItem(item) {
+            itemsTable.children("tbody").append(`<tr class="item ${item["expiration_status"]}">
+                                                    <td class="item-id">${item["id"]}</td>
+                                                    <td class="item-name">${item["name"]}</td>
+                                                    <td class="item-upc">${item["upc"]}</td>
+                                                    <td class="item-expiration">${item["expiration"] ? item["expiration"] : "N/A"}</td>
+                                                    <td class="item-tags">${item["tags"].join(', ')}</td>
+                                                    <td class="item-use"><input class="radio-condition" type="radio" name="condition-${index}" value="use"></td>
+                                                    <td class="item-discard"><input class="radio-condition" type="radio" name="condition-${index}" value="discard"></td>
+                                                    <td class="item-remove"><input class="radio-condition" type="radio" name="condition-${index}" value="remove"></td>
+                                                    <td class="item-none"><input class="radio-condition" type="radio" name="condition-${index}" value=""></td>
+                                                 </tr>`);
+            index += 1;
+        }
+
+        function enterSubmit(e) {
+            if (e.which === 13) {
+                e.target.select();
+                sendScan();
+            }
+        }
+
+        function sendRemove() {
+            let itemIds = {};
+            $.each(itemsTable.children("tbody").children(".item"), (index, element) => {
+                element = $(element);
+                let radio = $(`input[name='condition-${index}']:checked`);
+                if (radio.length && radio.val() !== "") {
+                    itemIds[element.children('.item-id').text()] = radio.val();
+                }
+            });
+            removeRequest["data"] = JSON.stringify({"item_ids": itemIds});
+            $.ajax(removeRequest).done(function (response) {
+                if (response["code"] === 200) {
+                    if (upc) {
+                        sendScan();
+                    } else {
+                        sendAll();
+                    }
+                } else {
+                    displayMessage(response["message"], "error");
+                }
+            });
+        }
+
+        upcInput.on('keyup', enterSubmit);
+        $("#btn-submit-upc").on('click', sendScan);
+
+        $("#btn-submit-all-items").on('click', sendAll);
+
+        $("#btn-remove-items").on('click', sendRemove);
+
+        $(document).on('keydown', function (e) {
+            if (e.which === 27) {
+                upcInput.val("");
+                upcInput.focus();
+            }
+        });
+    </script>
+    <script>
+        $(".items-table > thead > tr > th").each(function () {
+            let header = $(this);
+            let i = header.index();
+            let reverse = false;
+
+            header.click(function () {
+                $(".items-table").find('td').filter(function () {
+                    return $(this).index() === i;
+                }).sortElements(function (a, b) {
+                    return $.text([a]) > $.text([b]) ? reverse ? -1 : 1 : reverse ? 1 : -1;
+                }, function () {
+                    return this.parentNode;
+                });
+
+                reverse = !reverse;
+            });
+        });
+    </script>
+{% endblock %}

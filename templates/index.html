@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 {% block styles %}
     {{ super() }}
-{#    <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/index.css') }}">#}
+    {#    <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/index.css') }}">#}
 {% endblock %}
 {% block content %}
-    <h1>Hello World</h1>
+    <div class="main-container">
+        <h1 style="font-size: 3rem">Inventory Tracker</h1>
+        <p style="width: 60%; margin: auto">
+            Welcome to Inventory Tracker! This web application is meant for tracking household products like food and
+            toiletries. This site can use a barcode scanner for improved efficiency. If you are able to set a custom
+            prefix on your barcode scanner, we recommend setting it the ESC key. The source code for this web
+            application can be found at <a href="https://github.com/Geodude25trade/InventorySystem">https://github.com/Geodude25trade/InventorySystem</a>.
+        </p>
+    </div>
 {% endblock %}

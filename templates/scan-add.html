@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block styles %}
+    {{ super() }}
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/components/inputs.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/layout/scan-add.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="main-container">
+        <div class="code-scan-container">
+            <input id="upc" name="upc" type="text" placeholder="Scan or Enter Code" autofocus onfocus="this.select()"
+                   autocomplete="off">
+            <button id="btn-submit-upc">Scan</button>
+        </div>
+        <div class="details-container" style="display: none">
+            <label for="name">Name</label><input id="name" name="name" type="text" placeholder="Item Name" autocomplete="off">
+            <label for="tags">Tags</label>
+            <ul id="tags" class="tag-container">
+            </ul>
+            <datalist id="tag-suggestions">
+                {% for tag in tags %}
+                    <option value="{{ tag.name }}">
+                {% endfor %}
+            </datalist>
+            <button id="btn-add-tag">+</button>
+            <label for="price">Price</label><input name="price" id="price" type="number" autocomplete="off" step="0.01" min="0" value="0.00">
+            <label for="expiration">Expiration Date</label><input name="expiration" id="expiration" type="date" autocomplete="off">
+            <button id="btn-add-item">Add Item</button>
+        </div>
+    </div>
+    <script>
+        let index = 0;
+        let tagList = $(".tag-container");
+        let detailsContainer = $(".details-container");
+        let upcInput = $("#upc");
+        let nameInput = $("#name");
+        let priceInput = $("#price");
+        let expirationInput = $("#expiration");
+        let upc = null;
+
+
+        let scanRequest = {
+            "url": "/scan_add",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": null,
+        };
+
+        let addRequest = {
+            "url": "/add",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": null,
+        };
+
+        function sendScan() {
+            upc = upcInput.val();
+            scanRequest["data"] = JSON.stringify({"upc": upc});
+            tagList.empty();
+            $.ajax(scanRequest).done(function (response) {
+                if (response["method"] === "add") {
+                    nameInput.val(response["name"]);
+                    priceInput.val(response["price"]);
+                    response["tags"].forEach(element => addTagInput(element));
+                } else if (response["method"] === "new") {
+                    addTagInput("");
+                }
+                detailsContainer.fadeIn();
+            });
+        }
+
+        function enterSubmit(e) {
+            if (e.which === 13) {
+                sendScan();
+            }
+        }
+
+        function addTagInput(value) {
+            let newTag = $(`<li><input class="tag" id="tag-${index}" name="tag-${index}" type="text" value="${value}" list="tag-suggestions"></li>`);
+            tagList.append(newTag);
+            newTag.show();
+            index += 1;
+        }
+
+        function sendItem() {
+            let tags = [];
+            $.each(tagList.children(), (index, element) => tags.push($(element).children('.tag').val()));
+            let name = nameInput.val()
+            if (upc === "" || !upc) {
+                displayMessage("Please specify a code!", "warning");
+            } else if (name === "" || !name) {
+                displayMessage("Please specify a name!", "warning");
+            } else {
+                addRequest["data"] = JSON.stringify({
+                    "name": nameInput.val(),
+                    "upc": upc,
+                    "tags": tags,
+                    "price": priceInput.val(),
+                    "expiration": expirationInput.val()
+                });
+                $.ajax(addRequest).done(function (response) {
+                    if (response["code"] === 200) {
+                        upcInput.focus();
+                        nameInput.val("");
+                        priceInput.val(0.00);
+                        tagList.empty();
+                        expirationInput.val("");
+                        upcInput.val("");
+                        displayMessage(response["message"], "success");
+                    } else {
+                        displayMessage(response["message"], "error");
+                    }
+                    detailsContainer.fadeOut();
+                });
+            }
+        }
+
+        upcInput.on('keydown', enterSubmit);
+        $("#btn-submit-upc").on('click', sendScan);
+
+        $("#btn-add-tag").on('click', e => addTagInput(""));
+
+        $("#btn-add-item").on('click', sendItem);
+
+        $(document).on('keydown', function (e) {
+            if (e.which === 27) {
+                upcInput.val("");
+                upcInput.focus();
+            }
+        });
+    </script>
+{% endblock %}

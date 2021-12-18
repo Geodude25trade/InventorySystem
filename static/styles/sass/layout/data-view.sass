@@ -1,0 +1,87 @@
+@import ../base/variables
+@import ../base/mixins
+
+.data-container
+  margin: 0 auto 25px auto
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+  grid-template-rows: repeat(7, 1fr)
+  //@include flex-box(space-around, center, center)
+
+  h2, div
+    text-align: center
+
+  div
+    grid-row: auto / span 2
+    grid-column: auto / span 2
+
+#expiring-soon
+  grid-row: auto / span 2
+  grid-column: auto / span 6
+
+  h2
+    font-size: 2.5rem
+
+#money-spent, #money-wasted
+  margin: 0 65px
+  grid-row: auto / span 1
+  grid-column: auto / span 3
+
+  h2
+    font-size: 2rem
+
+  h3
+    font-size: 1.75rem
+
+#money-spent
+  justify-self: right
+
+  h3
+    color: $fresh
+
+#money-wasted
+  justify-self: left
+
+  h3
+    color: $expired
+
+.pie-chart
+  margin: 5px auto
+
+#scroll-prompt
+  position: fixed
+  bottom: 25px
+  left: 50%
+  transform: translateX(-50%)
+  font-size: 2rem
+  font-weight: bold
+  opacity: 0.6
+  will-change: bottom
+  -moz-animation: bob 1.5s ease-in-out infinite alternate
+  -webkit-animation: bob 1.5s ease-in-out infinite alternate
+  -o-animation: bob 1.5s ease-in-out infinite alternate
+  animation: bob 1.5s ease-in-out infinite alternate
+
+@-o-keyframes bob
+  from
+    bottom: 15px
+  to
+    bottom: 35px
+
+@-moz-keyframes bob
+  from
+    bottom: 15px
+  to
+    bottom: 35px
+
+@-webkit-keyframes bob
+  from
+    bottom: 15px
+  to
+    bottom: 35px
+
+@keyframes bob
+  from
+    bottom: 15px
+  to
+    bottom: 35px

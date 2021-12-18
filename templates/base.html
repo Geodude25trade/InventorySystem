@@ -4,19 +4,37 @@
     <meta charset="UTF-8">
     {% block scripts %}
         <script src="{{ url_for('static', filename='scripts/jquery-3.6.0.min.js') }}" type="text/javascript"></script>
-{#        <script src="{{ url_for('static', filename='scripts/base.js') }}" type="text/javascript"></script>#}
+        <script src="{{ url_for('static', filename='scripts/jquery.sortElements.js') }}" type="text/javascript"></script>
+        <script src="{{ url_for('static', filename='scripts/banner-message.js') }}" type="text/javascript"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        {#        <script src="{{ url_for('static', filename='scripts/base.js') }}" type="text/javascript"></script>#}
     {% endblock %}
     {% block styles %}
-{#        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/base.css') }}">#}
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/components/tables.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/components/buttons.css') }}">
     {% endblock %}
-    <title>{% block title %}Inventory System{% endblock %}</title>
+    <title>{% block title %}Inventory Tracker{% endblock %}</title>
 </head>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
 <body>
 <script>let FF_FOUC_FIX</script>
 {% block navbar %}
     <div class="navbar">
         <div class="links">
             <a href="/">Home</a>
+            <a href="/scan_add">Add Item</a>
+            <a href="/scan_remove">Remove Items</a>
+            <a href="/items">View Items</a>
+            <a href="/data">Data Dashboard</a>
         </div>
     </div>
 {% endblock %}
