@@ -1,0 +1,975 @@
+[
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": "2025-12-21",
+    "price": 1.62,
+    "condition": 1,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": "2012-12-12",
+    "price": 1.62,
+    "condition": 2,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": null,
+    "price": 1.62,
+    "condition": 1,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": "2025-12-24",
+    "price": 1.62,
+    "condition": 1,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": "2025-12-25",
+    "price": 1.62,
+    "condition": 0,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": "2021-12-20",
+    "price": 2.49,
+    "condition": 1,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": "2021-12-20",
+    "price": 2.49,
+    "condition": 2,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": "2021-12-21",
+    "price": 2.49,
+    "condition": 0,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": null,
+    "price": 2.49,
+    "condition": 1,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": null,
+    "price": 2.49,
+    "condition": 2,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": null,
+    "price": 2.49,
+    "condition": 2,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": null,
+    "price": 2.49,
+    "condition": 1,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Sunbelt Bakery - Fudge Dipped Coconut Chew Granola Bars",
+    "upc": "024300031045",
+    "expiration": null,
+    "price": 2.49,
+    "condition": 1,
+    "tags": [
+      "Snack",
+      "Chocolate"
+    ]
+  },
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": null,
+    "price": 1.62,
+    "condition": 2,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": null,
+    "price": 1.62,
+    "condition": 1,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Kirkland Sparkling - Carbonated Flavored Water",
+    "upc": "096619995486",
+    "expiration": null,
+    "price": 1.62,
+    "condition": 2,
+    "tags": [
+      "Beverage"
+    ]
+  },
+  {
+    "name": "Whole Milk",
+    "upc": "070552406001",
+    "expiration": "2021-12-02",
+    "price": 2.89,
+    "condition": 2,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Whole Milk",
+    "upc": "070552406001",
+    "expiration": "2021-12-29",
+    "price": 2.89,
+    "condition": 0,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Eggnog",
+    "upc": "026400531807",
+    "expiration": "2021-12-30",
+    "price": 3.59,
+    "condition": 1,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Eggnog",
+    "upc": "026400531807",
+    "expiration": "2021-12-29",
+    "price": 3.59,
+    "condition": 2,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Eggnog",
+    "upc": "026400531807",
+    "expiration": "2022-01-02",
+    "price": 3.59,
+    "condition": 0,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Peanut Butter",
+    "upc": "037600110723",
+    "expiration": "2022-01-13",
+    "price": 1.89,
+    "condition": 0,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Peanut Butter",
+    "upc": "037600110723",
+    "expiration": "2022-01-20",
+    "price": 1.89,
+    "condition": 0,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Pineapple Chunks",
+    "upc": "070552600119",
+    "expiration": "2022-12-24",
+    "price": 2.24,
+    "condition": 0,
+    "tags": [
+      "Canned",
+      "Fruit"
+    ]
+  },
+  {
+    "name": "Pineapple Chunks",
+    "upc": "070552600119",
+    "expiration": "2020-12-24",
+    "price": 2.24,
+    "condition": 2,
+    "tags": [
+      "Canned",
+      "Fruit"
+    ]
+  },
+  {
+    "name": "Pineapple Chunks",
+    "upc": "070552600119",
+    "expiration": "2019-12-24",
+    "price": 2.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Fruit"
+    ]
+  },
+  {
+    "name": "Pineapple Chunks",
+    "upc": "070552600119",
+    "expiration": "2021-02-15",
+    "price": 2.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Fruit"
+    ]
+  },
+  {
+    "name": "Oatmeal",
+    "upc": "030000012000",
+    "expiration": "2022-03-15",
+    "price": 0.0,
+    "condition": 0,
+    "tags": [
+      "Grain"
+    ]
+  },
+  {
+    "name": "Oatmeal",
+    "upc": "030000012000",
+    "expiration": "2021-10-05",
+    "price": 0.0,
+    "condition": 1,
+    "tags": [
+      "Grain"
+    ]
+  },
+  {
+    "name": "Corn Tortilla Chips",
+    "upc": "077948246609",
+    "expiration": "2022-01-02",
+    "price": 3.24,
+    "condition": 0,
+    "tags": [
+      "Snack"
+    ]
+  },
+  {
+    "name": "Corn Tortilla Chips",
+    "upc": "077948246609",
+    "expiration": "2021-11-03",
+    "price": 3.24,
+    "condition": 1,
+    "tags": [
+      "Snack"
+    ]
+  },
+  {
+    "name": "Frosted S'mores Poptarts",
+    "upc": "070552801127",
+    "expiration": "2022-09-16",
+    "price": 3.14,
+    "condition": 0,
+    "tags": [
+      "Snack",
+      "Breakfast"
+    ]
+  },
+  {
+    "name": "Frosted S'mores Poptarts",
+    "upc": "070552801127",
+    "expiration": "2021-11-15",
+    "price": 3.14,
+    "condition": 1,
+    "tags": [
+      "Snack",
+      "Breakfast"
+    ]
+  },
+  {
+    "name": "Frosted S'mores Poptarts",
+    "upc": "070552801127",
+    "expiration": "2021-08-24",
+    "price": 3.14,
+    "condition": 1,
+    "tags": [
+      "Snack",
+      "Breakfast"
+    ]
+  },
+  {
+    "name": "Mustard",
+    "upc": "070552701182",
+    "expiration": "2023-08-26",
+    "price": 2.49,
+    "condition": 0,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Mustard",
+    "upc": "070552701182",
+    "expiration": "2021-11-22",
+    "price": 2.49,
+    "condition": 1,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Ketchup",
+    "upc": "070552701373",
+    "expiration": "2023-02-28",
+    "price": 1.89,
+    "condition": 0,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Ketchup",
+    "upc": "070552701373",
+    "expiration": "2021-10-04",
+    "price": 1.89,
+    "condition": 1,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Concord Grape Jelly",
+    "upc": "051500001622",
+    "expiration": "2023-05-17",
+    "price": 3.54,
+    "condition": 0,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Concord Grape Jelly",
+    "upc": "051500001622",
+    "expiration": "2021-10-12",
+    "price": 3.54,
+    "condition": 1,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Maple Syrup",
+    "upc": "070552902145",
+    "expiration": "2024-04-29",
+    "price": 2.63,
+    "condition": 0,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Maple Syrup",
+    "upc": "070552902145",
+    "expiration": "2021-11-23",
+    "price": 2.63,
+    "condition": 1,
+    "tags": [
+      "Condiment"
+    ]
+  },
+  {
+    "name": "Canned Chicken Breast",
+    "upc": "096619488827",
+    "expiration": "2024-02-15",
+    "price": 1.24,
+    "condition": 0,
+    "tags": [
+      "Canned",
+      "Meat"
+    ]
+  },
+  {
+    "name": "Canned Chicken Breast",
+    "upc": "096619488827",
+    "expiration": "2024-02-15",
+    "price": 1.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Meat"
+    ]
+  },
+  {
+    "name": "Canned Chicken Breast",
+    "upc": "096619488827",
+    "expiration": "2024-02-15",
+    "price": 1.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Meat"
+    ]
+  },
+  {
+    "name": "Canned Chicken Breast",
+    "upc": "096619488827",
+    "expiration": "2024-02-15",
+    "price": 1.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Meat"
+    ]
+  },
+  {
+    "name": "Canned Chicken Breast",
+    "upc": "096619488827",
+    "expiration": "2024-02-15",
+    "price": 1.24,
+    "condition": 0,
+    "tags": [
+      "Canned",
+      "Meat"
+    ]
+  },
+  {
+    "name": "Canned Chicken Breast",
+    "upc": "096619488827",
+    "expiration": "2024-02-15",
+    "price": 1.24,
+    "condition": 0,
+    "tags": [
+      "Canned",
+      "Meat"
+    ]
+  },
+  {
+    "name": "Canned Chicken Breast",
+    "upc": "096619488827",
+    "expiration": "2024-02-15",
+    "price": 1.24,
+    "condition": 0,
+    "tags": [
+      "Canned",
+      "Meat"
+    ]
+  },
+  {
+    "name": "Cinnamon Sugar Poptarts",
+    "upc": "070552801103",
+    "expiration": "2022-05-12",
+    "price": 2.24,
+    "condition": 0,
+    "tags": [
+      "Snack",
+      "Breakfast"
+    ]
+  },
+  {
+    "name": "Tomato Soup",
+    "upc": "051000000118",
+    "expiration": "2022-12-08",
+    "price": 1.24,
+    "condition": 0,
+    "tags": [
+      "Canned",
+      "Soup"
+    ]
+  },
+  {
+    "name": "Tomato Soup",
+    "upc": "051000000118",
+    "expiration": "2020-02-17",
+    "price": 1.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Soup"
+    ]
+  },
+  {
+    "name": "Tomato Soup",
+    "upc": "051000000118",
+    "expiration": "2021-08-18",
+    "price": 1.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Soup"
+    ]
+  },
+  {
+    "name": "Tomato Soup",
+    "upc": "051000000118",
+    "expiration": "2022-02-09",
+    "price": 1.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Soup"
+    ]
+  },
+  {
+    "name": "Tomato Soup",
+    "upc": "051000000118",
+    "expiration": "2023-02-09",
+    "price": 1.24,
+    "condition": 0,
+    "tags": [
+      "Canned",
+      "Soup"
+    ]
+  },
+  {
+    "name": "Tomato Soup",
+    "upc": "051000000118",
+    "expiration": "2021-04-26",
+    "price": 1.24,
+    "condition": 1,
+    "tags": [
+      "Canned",
+      "Soup"
+    ]
+  },
+  {
+    "name": "Cheddar Jack Cheetos",
+    "upc": "028400589888",
+    "expiration": "2022-02-08",
+    "price": 2.89,
+    "condition": 0,
+    "tags": [
+      "Snack"
+    ]
+  },
+  {
+    "name": "Cheddar Jack Cheetos",
+    "upc": "028400589888",
+    "expiration": "2021-06-08",
+    "price": 2.89,
+    "condition": 1,
+    "tags": [
+      "Snack"
+    ]
+  },
+  {
+    "name": "White Bread",
+    "upc": "070552001695",
+    "expiration": "2021-12-22",
+    "price": 0.98,
+    "condition": 0,
+    "tags": [
+      "Bread"
+    ]
+  },
+  {
+    "name": "White Bread",
+    "upc": "070552001695",
+    "expiration": "2021-12-07",
+    "price": 0.98,
+    "condition": 2,
+    "tags": [
+      "Bread"
+    ]
+  },
+  {
+    "name": "White Bread",
+    "upc": "070552001695",
+    "expiration": "2021-10-28",
+    "price": 0.98,
+    "condition": 1,
+    "tags": [
+      "Bread"
+    ]
+  },
+  {
+    "name": "White Bread",
+    "upc": "070552001695",
+    "expiration": "2021-12-01",
+    "price": 0.98,
+    "condition": 1,
+    "tags": [
+      "Bread"
+    ]
+  },
+  {
+    "name": "White Bread",
+    "upc": "070552001695",
+    "expiration": "2021-12-30",
+    "price": 0.98,
+    "condition": 0,
+    "tags": [
+      "Bread"
+    ]
+  },
+  {
+    "name": "Sausage",
+    "upc": "070247136879",
+    "expiration": "2021-12-30",
+    "price": 3.98,
+    "condition": 0,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "name": "Sausage",
+    "upc": "070247136879",
+    "expiration": "2021-10-19",
+    "price": 3.98,
+    "condition": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "name": "Original Creamer",
+    "upc": "041271004724",
+    "expiration": "2022-02-15",
+    "price": 4.89,
+    "condition": 0,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Original Creamer",
+    "upc": "041271004724",
+    "expiration": "2021-12-30",
+    "price": 4.89,
+    "condition": 1,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Carrot Sticks",
+    "upc": "033383664019",
+    "expiration": "2021-12-30",
+    "price": 3.89,
+    "condition": 0,
+    "tags": [
+      "Vegetable"
+    ]
+  },
+  {
+    "name": "Carrot Sticks",
+    "upc": "033383664019",
+    "expiration": "2021-11-15",
+    "price": 3.89,
+    "condition": 2,
+    "tags": [
+      "Vegetable"
+    ]
+  },
+  {
+    "name": "Applesauce",
+    "upc": "028700111703",
+    "expiration": "2021-12-30",
+    "price": 4.58,
+    "condition": 0,
+    "tags": [
+      "Fruit"
+    ]
+  },
+  {
+    "name": "Applesauce",
+    "upc": "028700111703",
+    "expiration": "2021-11-09",
+    "price": 4.58,
+    "condition": 1,
+    "tags": [
+      "Fruit"
+    ]
+  },
+  {
+    "name": "Vanilla Ice Cream",
+    "upc": "071203087402",
+    "expiration": "2021-12-29",
+    "price": 3.89,
+    "condition": 0,
+    "tags": [
+      "Dairy",
+      "Frozen"
+    ]
+  },
+  {
+    "name": "Vanilla Ice Cream",
+    "upc": "071203087402",
+    "expiration": "2021-10-12",
+    "price": 3.89,
+    "condition": 2,
+    "tags": [
+      "Dairy",
+      "Frozen"
+    ]
+  },
+  {
+    "name": "Meatballs",
+    "upc": "036669028543",
+    "expiration": "2022-02-17",
+    "price": 5.89,
+    "condition": 0,
+    "tags": [
+      "Meat",
+      "Frozen"
+    ]
+  },
+  {
+    "name": "Meatballs",
+    "upc": "036669028543",
+    "expiration": "2021-10-19",
+    "price": 5.89,
+    "condition": 1,
+    "tags": [
+      "Meat",
+      "Frozen"
+    ]
+  },
+  {
+    "name": "Sour Cream",
+    "upc": "070552402218",
+    "expiration": "2021-10-03",
+    "price": 2.18,
+    "condition": 1,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Sour Cream",
+    "upc": "070552402218",
+    "expiration": "2021-12-06",
+    "price": 2.18,
+    "condition": 2,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Sour Cream",
+    "upc": "070552402218",
+    "expiration": "2021-12-23",
+    "price": 2.18,
+    "condition": 1,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Sour Cream",
+    "upc": "070552402218",
+    "expiration": "2022-01-01",
+    "price": 2.18,
+    "condition": 0,
+    "tags": [
+      "Dairy"
+    ]
+  },
+  {
+    "name": "Blueberry Muffin Toasters",
+    "upc": "042400337980",
+    "expiration": "0021-09-05",
+    "price": 2.54,
+    "condition": 1,
+    "tags": [
+      "Breakfast"
+    ]
+  },
+  {
+    "name": "Blueberry Muffin Toasters",
+    "upc": "042400337980",
+    "expiration": "2022-02-10",
+    "price": 2.54,
+    "condition": 0,
+    "tags": [
+      "Breakfast"
+    ]
+  },
+  {
+    "name": "Rubbing Alcohol",
+    "upc": "681131687560",
+    "expiration": null,
+    "price": 2.54,
+    "condition": 1,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Rubbing Alcohol",
+    "upc": "681131687560",
+    "expiration": null,
+    "price": 2.54,
+    "condition": 0,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Rubbing Alcohol",
+    "upc": "681131687560",
+    "expiration": null,
+    "price": 2.54,
+    "condition": 0,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Hydrogen Peroxide",
+    "upc": "681131285681",
+    "expiration": null,
+    "price": 3.84,
+    "condition": 1,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Hydrogen Peroxide",
+    "upc": "681131285681",
+    "expiration": null,
+    "price": 3.84,
+    "condition": 1,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Hydrogen Peroxide",
+    "upc": "681131285681",
+    "expiration": null,
+    "price": 3.84,
+    "condition": 0,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Shaving Cream",
+    "upc": "051009009662",
+    "expiration": null,
+    "price": 2.48,
+    "condition": 1,
+    "tags": [
+      "Toiletry"
+    ]
+  },
+  {
+    "name": "Shaving Cream",
+    "upc": "051009009662",
+    "expiration": null,
+    "price": 2.48,
+    "condition": 0,
+    "tags": [
+      "Toiletry"
+    ]
+  },
+  {
+    "name": "Fabric Bandages",
+    "upc": "681131228350",
+    "expiration": null,
+    "price": 5.89,
+    "condition": 1,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Fabric Bandages",
+    "upc": "681131228350",
+    "expiration": null,
+    "price": 5.89,
+    "condition": 0,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Triple Antibiotic",
+    "upc": "1358",
+    "expiration": "2014-12-24",
+    "price": 12.24,
+    "condition": 0,
+    "tags": [
+      "Medical"
+    ]
+  },
+  {
+    "name": "Cotton Swabs",
+    "upc": "681131122214",
+    "expiration": null,
+    "price": 8.54,
+    "condition": 0,
+    "tags": [
+      "Toiletry"
+    ]
+  },
+  {
+    "name": "Gold Bond Lotion",
+    "upc": "041167053676",
+    "expiration": null,
+    "price": 12.54,
+    "condition": 0,
+    "tags": [
+      "Toiletry"
+    ]
+  }
+]
